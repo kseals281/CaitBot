@@ -25,8 +25,8 @@ func init() {
 	rand.Seed(time.Now().Unix())
 
 	// Discord Authentication Token
-	Session.Token = "Bot Njc3NzM3NTI4MzMzMTcyNzM3.XkYmSA.ZBtKoZK3YOL__1NuZ6q78pL0WvM"
-	fmt.Println(Session.Token)
+	Session.Token = os.Getenv("CAITBOT")
+	fmt.Println()
 	if Session.Token == "" {
 		// Pointer, flag, default, description
 		flag.StringVar(&Session.Token, "t", "", "Discord Authentication Token")
