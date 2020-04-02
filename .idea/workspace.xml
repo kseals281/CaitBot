@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c178c26c-c8d2-4746-ae31-35143f869116" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/khari.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/journal_prompts.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -30,7 +33,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1Xme5Mx14gH69QAtK0yBoC1FyL4" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -51,6 +56,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="vcs.patch.to.clipboard" value="true" />
   </component>
   <component name="RunManager" selected="Go Build.go build CaitBot">
@@ -72,9 +78,33 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="TestReminderHandler in CaitBot" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="CaitBot" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="CaitBot" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestReminderHandler$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_prompt in CaitBot" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="CaitBot" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="CaitBot" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_prompt$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build CaitBot" />
+        <item itemvalue="Go Test.Test_prompt in CaitBot" />
+        <item itemvalue="Go Test.TestReminderHandler in CaitBot" />
         <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
@@ -96,29 +126,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit of the base for Cait's bot. Bot is running smoothly and can connect to the test server." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit of the base for Cait's bot. Bot is running smoothly and can connect to the test server." />
+    <MESSAGE value="Fixed the accidentally published discord token" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the accidentally published discord token" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="303" y="54" key="CommitChangelistDialog2" timestamp="1581657100916">
+    <state x="493" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1583354595994">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="54" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1581657100916" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1581696013043">
+    <state x="493" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1583354595994" />
+    <state x="408" y="193" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582059969117">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1581696013043" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1581696013042">
+    <state x="408" y="193" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1582059969117" />
+    <state x="303" y="54" key="CommitChangelistDialog2" timestamp="1581696105185">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1581696013042" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1581696013041">
+    <state x="303" y="54" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1581696105185" />
+    <state width="1398" height="154" key="GridCell.Tab.0.bottom" timestamp="1585810240958">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1581696013041" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1581696013042">
+    <state width="1398" height="154" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585810240958" />
+    <state width="1398" height="154" key="GridCell.Tab.0.center" timestamp="1585810240957">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1581696013042" />
+    <state width="1398" height="154" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1585810240957" />
+    <state width="1398" height="154" key="GridCell.Tab.0.left" timestamp="1585810240956">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="154" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1585810240956" />
+    <state width="1398" height="154" key="GridCell.Tab.0.right" timestamp="1585810240957">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="154" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1585810240957" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1581657016404">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -135,13 +174,17 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1581657016404" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1581657103849">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1581696109923">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581657103849" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581696109923" />
     <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581656439313">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1581656439313" />
+    <state x="385" y="196" key="search.everywhere.popup" timestamp="1581696303035">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1581696303035" />
   </component>
 </project>

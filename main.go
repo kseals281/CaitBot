@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
+	"io"
 	"log"
 	"math/rand"
 	"os"
@@ -10,10 +12,16 @@ import (
 	"syscall"
 	"time"
 
-	"test-bot/commands"
-
 	"github.com/bwmarrin/discordgo"
 )
+
+const ErrOpenJournalPrompt = JournalErr("unable to open journal prompts")
+
+type JournalErr string
+
+func (e JournalErr) Error() string {
+	return string(e)
+}
 
 // Session is declared in the global space so it can be easily used
 // throughout this program.
@@ -55,14 +63,14 @@ func main() {
 	Session.State.User, err = Session.User("@me")
 	errCheck("error retrieving account", err)
 
-	Session.AddHandler(commands.CommandHandler)
+	Session.AddHandler(CommandHandler)
 	Session.AddHandler(func(discord *discordgo.Session, ready *discordgo.Ready) {
 		err = discord.UpdateStatus(0, "A friendly Carrot Cait bot!")
 		if err != nil {
 			fmt.Println("Error attempting to set my status")
 		}
 		servers := discord.State.Guilds
-		fmt.Printf("Test-Bot has started on %d servers\n", len(servers))
+		fmt.Printf("CaitBot has started on %d servers\n", len(servers))
 	})
 
 	// Open a websocket connection to Discord
@@ -78,4 +86,40 @@ func errCheck(msg string, err error) {
 		fmt.Printf("%s: %+v", msg, err)
 		panic(err)
 	}
+}
+
+func CommandHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
+	user := m.Author
+	botID := s.State.User.ID
+	if user.ID == botID || user.Bot {
+		//Do nothing because the bot is talking
+		return
+	}
+
+	if m.Content == "!journal" {
+		promptJournal(s, m.ChannelID)
+	}
+}
+
+func promptJournal(s *discordgo.Session, chID string) error {
+	f, err := os.Open("journal_prompts.txt")
+	if err != nil {
+		s.ChannelMessageSend(chID, "Unable to open journal prompts.")
+		return ErrOpenJournalPrompt
+	}
+	s.ChannelMessageSend(chID, prompt(f))
+	return nil
+}
+
+func prompt(r io.Reader) string {
+	scanner := bufio.NewScanner(r)
+	var prompts []string
+	for scanner.Scan() {
+		prompts = append(prompts, scanner.Text())
+	}
+	if len(prompts) == 0 {
+		return ""
+	}
+	i := rand.Intn(len(prompts))
+	return prompts[i]
 }
